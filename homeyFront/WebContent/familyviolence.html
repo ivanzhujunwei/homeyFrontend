@@ -295,13 +295,13 @@
 			//addresses = document.getElementById('places').innerText;
 			resultsMap = new google.maps.Map(document
 					.getElementById('gmap-basic-marker'), {
-				zoom : 11,
+				zoom : 12,
 				center : {
 					lat : -37.8136,
 					lng : 144.9631
 				}
 			});
-			findCurrentLocation();
+			
 			geocoder = new google.maps.Geocoder();
 			if (addresses != null) {
 				var addressesArray = addresses.split("^");
@@ -309,6 +309,8 @@
 				for (i = 0; i < addressesArray.length; i++) {
 					geocodeAddress(addressesArray[i]);
 				}
+			}else{
+				findCurrentLocation();
 			}
 		};
 
